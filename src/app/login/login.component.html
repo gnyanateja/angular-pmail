@@ -1,0 +1,35 @@
+<br><br><br><br>
+<div class="formcontainer">
+  <div class="formbody">
+      <form id="f1" style="width:100%;" [formGroup]="loginForm">
+          <div class="header">Pm@il</div>
+          <div>
+            <div class="input-group mb-3">
+              <input type="text" formControlName="email" class="form-control" placeholder="Username" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus="true" required>
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">@pmail.com</span>
+              </div>
+            </div>
+
+              <span *ngIf="isValid('email')">Username cannot be blank</span>
+          </div>
+          <div>
+
+            <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password" name="password" required>
+              <span *ngIf="isValid('password')">Password cannot be blank</span>
+          </div>
+          <div style="margin-top:40px;">
+              <button class="form-btn" (click)="login()">Sign In</button>
+          </div>
+      </form>
+  </div>
+
+  <div>
+      <div style="width: 290px; padding: 20px;">
+          <button class="form-btn-hollow" (click)="movetoregister()">Register</button>
+      </div>
+  </div>
+</div>
+
+
+

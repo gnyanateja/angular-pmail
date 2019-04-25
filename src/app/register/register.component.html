@@ -1,0 +1,82 @@
+
+<div class="formcontainer">
+  <div class="formbody">
+      <form style="width:100%;" [formGroup]="myForm">
+          <div class="header">Register</div>
+          <div>
+                  <div class="input-group mb-3">
+                      <input type="text" id="email" formControlName="email" class="form-control" placeholder="Email" aria-label="username" aria-describedby="basic-addon2" required>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">@pmail.com</span>
+                      </div>
+                    </div>
+              <span *ngIf="isValid('email')">Entered email is invalid</span>
+          </div>
+          <div>
+              <input type="text" class="form-control" formControlName="first_name"  placeholder="first_name" name="first_name" required>
+              <span *ngIf="isValid('first_name')">Please enter first name</span>
+            </div>
+            <br>
+          <div>
+              <input type="text" class="form-control" formControlName="last_name"  placeholder="last_name" name="last_name" required>
+              <span *ngIf="isValid('last_name')">Please enter last name</span>
+            </div>
+            <br>
+          <div>
+              <input type="number" class="form-control" formControlName="phone_no"  placeholder="phone_no" name="phone_no" required>
+              <span *ngIf="isValid('phone_no')">Please enter valid phone number</span>
+            </div>
+            <br>
+            <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Male" checked>
+              <label class="form-check-label" for="gridRadios1">
+                Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Female">
+              <label class="form-check-label" for="gridRadios2">
+               Female
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Others" disabled>
+              <label class="form-check-label" for="gridRadios3">
+                Others
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+          <div>
+              <input type="password" class="form-control" formControlName="password" id="pass" placeholder="Password" name="password" required>
+
+              <span *ngIf="isValid('password')">Password is a mandatory field</span>
+          </div>
+          <br>
+          <div>
+              <input type="password" class="form-control" formControlName="cnfpass" id="cnfpass" placeholder="Re-enter Password" required>
+
+              <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span>
+          </div>
+          <div style="margin-top:20px;">
+              <button class="form-btn-hollow" (click)="register()">Register</button>
+          </div>
+
+          <div style="text-align: center;">
+              {{successMessage}}
+          </div>
+      </form>
+  </div>
+
+  <div>
+      <div style="width: 290px; padding: 20px;">
+          <button class="form-btn-hollow" (click)="movetologin()">Login</button>
+      </div>
+  </div>
+</div>
