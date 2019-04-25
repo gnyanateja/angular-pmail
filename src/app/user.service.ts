@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-const url="https://p-mail/herokuapp.com";
+const url="https://p-mail.herokuapp.com";
 
 @Injectable()
 export class UserService {
